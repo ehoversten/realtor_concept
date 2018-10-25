@@ -122,5 +122,6 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-
+# STATIC FILES
+/static
 # End of https://www.gitignore.io/api/django
