@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # our APPS
     # 'pages',
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +128,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'btre/static')   
+    os.path.join(BASE_DIR, 'btre/static')
 ]
