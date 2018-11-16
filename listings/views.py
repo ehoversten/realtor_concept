@@ -5,7 +5,7 @@ from .models import Listing
 
 # Create your views here.
 def index(request):
-    listings = Listing.objects.all()
+    listings = Listing.objects.order_by('-list_date')
     # ADD PAGINATOR
     paginator = Paginator(listings, 3)
     page = request.GET.get('page')
