@@ -14,7 +14,7 @@
           <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores eveniet vel nostrum magnam
             voluptatum tempore! Consectetur, id commodi!</p>
           <div class="search">
-            <form action="search.html">
+            <form action="{% url 'search' %}">
               <!-- Form Row 1 -->
               <div class="form-row">
                 <div class="col-md-4 mb-3">
@@ -31,7 +31,11 @@
                   <label class="sr-only">State</label>
                   <select name="state" class="form-control">
                     <option selected="true" disabled="disabled">State (All)</option>
-                    <option value="AL">Alabama</option>
+                    {% for key, value in state_choices.items %}
+                      <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+
+                    <!-- <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -81,7 +85,7 @@
                     <option value="WA">Washington</option>
                     <option value="WV">West Virginia</option>
                     <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
+                    <option value="WY">Wyoming</option> -->
                   </select>
                 </div>
               </div>
@@ -91,7 +95,10 @@
                   <label class="sr-only">Bedrooms</label>
                   <select name="bedrooms" class="form-control">
                     <option selected="true" disabled="disabled">Bedrooms (All)</option>
-                    <option value="1">1</option>
+                    {% for key, value in bedroom_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -100,13 +107,16 @@
                     <option value="7">7</option>
                     <option value="8">8</option>
                     <option value="9">9</option>
-                    <option value="10">10</option>
+                    <option value="10">10</option> -->
                   </select>
                 </div>
                 <div class="col-md-6 mb-3">
                   <select name="price" class="form-control" id="type">
                     <option selected="true" disabled="disabled">Max Price (Any)</option>
-                    <option value="100000">$100,000</option>
+                    {% for key, value in price_choices.items %}
+                    <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                    <!-- <option value="100000">$100,000</option>
                     <option value="200000">$200,000</option>
                     <option value="300000">$300,000</option>
                     <option value="400000">$400,000</option>
@@ -115,7 +125,7 @@
                     <option value="700000">$700,000</option>
                     <option value="800000">$800,000</option>
                     <option value="900000">$900,000</option>
-                    <option value="1000000">$1M+</option>
+                    <option value="1000000">$1M+</option> -->
                   </select>
                 </div>
               </div>
