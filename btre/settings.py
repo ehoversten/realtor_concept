@@ -159,6 +159,6 @@ EMAIL_USE_TLS = True
 
 
 try: 
-    form .local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
